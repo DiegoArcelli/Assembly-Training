@@ -8,8 +8,8 @@
 %endmacro
 
 section .data
-    str1 db "cane",0
-    str2 db "canetto",0
+    str1 db "caneda",0
+    str2 db "cane",0
 
 section .text
     global _start
@@ -22,13 +22,15 @@ ciclo:
     mov cl,byte[rax]
     mov dl,byte[rbx]
     inc rax
-    inc rbx
+    inc rbx    
     cmp cl,dl
-    je ciclo
+    je equal
+    jmp different
+equal:
     cmp cl,0
-    jne different
+    jne ciclo
     cmp dl,0
-    jne different
+    jne ciclo
     mov rax,1
     jmp fine
 different:
