@@ -30,7 +30,7 @@ ciclo:
     je not_found
     jmp ciclo
 equal:
-    cmp byte[rax+1],0
+    cmp byte[rbx],0
     je found
     jmp ciclo
 found:
