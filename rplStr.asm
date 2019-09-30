@@ -32,7 +32,7 @@ ciclo:
     mov r8,rax
     mov r9,rax
     cmp cl,0
-    je not_found
+    je end
     jmp ciclo
 equal:
     mov r9,rax
@@ -75,8 +75,6 @@ ciclo_rpl3:
     mov rsi,new_string
     mov rdx,14
     syscall
-not_found:
-    mov rax,0
 end:
 ret
 
